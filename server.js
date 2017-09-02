@@ -2,6 +2,8 @@ const express = require('express');
 const hbs = require('hbs');
 const fs = require('fs');
 
+const port = process.env.port || 3000;
+
 var app = express();
 
 hbs.registerPartials(__dirname + '/views/partials');
@@ -61,6 +63,6 @@ app.get('/bad', (req, res) => {
     });
 });
 
-app.listen(3000, () => { //2nd argument is optional, it`s a function that will run once the server has started
-    console.log('Server is up on port 3000');
+app.listen(port, () => { //2nd argument is optional, it`s a function that will run once the server has started
+    console.log(`Server is up on port ${port}`);
 }); //chrome: http://localhost:3000/
