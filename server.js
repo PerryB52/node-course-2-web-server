@@ -57,6 +57,14 @@ app.get('/about', (req, res) => {
     }); 
 });
 
+app.get('/projects', (req, res) => {
+    //let`s you render any of templates you have setup with current view engine
+    res.render('projects.hbs', { //second argument can be an object which you can pass so you can inject data in the template
+        pageTitle: 'Projects Page',
+        welcomeMessage: 'Current Project Portfolio'
+    }); 
+});
+
 app.get('/bad', (req, res) => {
     res.send({
         errorMessage: "Unable to handle this request"
